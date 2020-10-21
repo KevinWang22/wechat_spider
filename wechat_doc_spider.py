@@ -94,7 +94,7 @@ class WechatSpider:
 
             # cookie每天都需要更新一次
             cookie_str = json.dumps(user_cookies)
-            with open('cookies.txt', 'w+', encoding='utf-8') as f:
+            with open('cookies.txt', 'w', encoding='utf-8') as f:
                 f.write(cookie_str)
             print('cookie已保存')
 
@@ -127,7 +127,9 @@ class WechatSpider:
 
     def get_cookie(self):
         # 如果没有登录过的话，就需要进行一次登录操作，否则直接读取已保存的cookie信息
-        if not os.path.exists('cookies.txt'):
+        if not os.path.exists('cookies.txt') or \
+                time.strftime('%Y-%m-%d', time.localtime()) != \
+                time.strftime('%Y-%m-%d', time.strptime(time.ctime(os.path.getmtime('cookies.txt')))):
             self.login_official_account()
         with open('cookies.txt', 'r', encoding='utf-8') as f:
             cookies_str = f.read()
@@ -213,25 +215,24 @@ class WechatSpider:
             paper_res = paper_res.json()
             print('paper_res:', paper_res)
             paper_count = paper_res.get('app_msg_cnt')
-            infos = {
+            """infos = {
                 'type': 'count',
                 'biz': self.biz,
                 'count': paper_count,
             }
-            exited_count = save_redis(infos)
+            save_redis(infos)"""
 
-            return paper_count, exited_count
+            return paper_count
 
     def get_all_paper(self, page_num=None, retry_times=0):
 
         if not page_num:
-            paper_count, exited_count = self.get_paper_count()
+            paper_count = self.get_paper_count()
             if not paper_count:
                 print('需爬取文章数获取失败，请稍后再试')
                 return None
-            print(paper_count, exited_count)
-            clawing_paper_num = int(paper_count) - int(exited_count)
-            clawing_pages = clawing_paper_num // 5 + 1
+            print(paper_count)
+            clawing_pages = paper_count // 5 + 1 - self.clawed_page
             self.paper_params['begin'] = '0'
         else:
             clawing_pages = page_num
@@ -252,16 +253,18 @@ class WechatSpider:
                 if retry_times < 6:
                     self.proxy.update_proxies(self.using_proxy['https'])
                     self.using_proxy = self.proxy.random_https_proxy()
-                    time.sleep(random.randint(1, 3))
+                    time.sleep(random.randint(2, 5))
                     return self.get_all_paper(clawing_pages, retry_times)
                 else:
                     print(f'第{int(self.paper_params["begin"]) // 5}页获取失败，请稍后再试')
+                    self.proxy.update_proxies(self.using_proxy['https'])
+                    self.using_proxy = self.proxy.random_https_proxy()
                     continue
             else:
                 try:
                     app_msg_list = response['app_msg_list']
                 except KeyError:
-                    print('keyError', response.text)
+                    print('keyError', response)
                 else:
                     for app_msg in app_msg_list:
                         saving_info = {
@@ -356,7 +359,7 @@ class WechatSpider:
 
 
 if __name__ == '__main__':
-    wechat = WechatSpider('495768433@qq.com', 'as9754826', '广之旅头条')
+    wechat = WechatSpider('495768433@qq.com', 'as9754826', '嬉游')
     # print(type(wechat.get_biz('嬉游')))
     wechat.get_all_paper()
 
