@@ -8,6 +8,8 @@ python 3.7.4   #  需要提前安装seleium、appium、mitmproxy、pymsql、redi
 数据库：redis、mysql
 chrome浏览器及对应版本的driver，没有driver的可以从这里下载：http://npm.taobao.org/mirrors/chromedriver/
 一个可以登录的微信账号和微信公众号
+
+
 二、 使用方法
   (一) 文章基础信息
     1. 打开redis、mysql，配置好mysql的用户和密码
