@@ -424,7 +424,7 @@ class WechatSpider:
 
 
 if __name__ == '__main__':
-    wechat = WechatSpider('495768433@qq.com', 'as9754826', '嬉游')
+    wechat = WechatSpider('你的公众号账号', '你的公众号密码', '需要爬取的公众号全称')
     # print(type(wechat.get_biz('嬉游')))
     wechat.get_all_paper()
 
