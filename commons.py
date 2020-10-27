@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import redis
 import pymysql
+import time
 
 
 # 微信公众号首页的地址，没有cookie的时候是登录界面，有cookie的时候从重定向的url中可以拿到token
@@ -85,6 +86,7 @@ def save_biz_paper(infos):
                     db.commit()
                 except Exception as e:
                     print('update infos error:', e)
+                    print('sql:', update_sql)
                     db.rollback()
                     status = 0
 
@@ -115,12 +117,21 @@ def del_redis_ele(infos):
     clawed_page = client.spop((infos['biz_name']+'clawed_page').encode())
     new_clawed_page = int(clawed_page) - 1
     client.sadd((infos['biz_name']+'clawed_page').encode(), str(new_clawed_page))
-    return client.srem((infos['biz_name'] + 'paper').encode(), infos['paper'])
+    return client.srem((infos['biz_name'] + 'paper').encode(), infos['app_msg_title'])
 
 
 def get_article_url(biz, is_continue=False):
 
     sql = f'select app_msg_url from biz where biz_name = "{biz}"'
+
+    # 需要从上次爬完的地方开始时，就从redis中取出上次的时间，把update_time早于上次的全部爬出来
+    if is_continue:
+        if client.exists(f'{biz}_last_claw_date'.encode()):
+            last_claw_date = get_last_claw_date(biz)
+            print('last_claw_date', last_claw_date)
+            if last_claw_date:
+                sql += f' and (date_format(update_time, "%Y-%m-%d") < "{str(last_claw_date)}" '
+                sql += 'or update_time is Null)'
 
     try:
         db = pymysql.connect('localhost', 'root', 'as9754826', 'wechat_biz')
@@ -132,6 +143,7 @@ def get_article_url(biz, is_continue=False):
         cursor.execute(sql)
         results = cursor.fetchall()
         db.close()
+        print('url_list_len', len(results))
         return results
 
 
@@ -180,6 +192,27 @@ def save_num(aid, like_num=0, read_num=0, old_like_num=0):
 
         conn.close()
         return save_status
+
+
+def save_last_claw_date(biz, claw_date):
+    """保存上次爬取点赞数的时间，这样就能实现继续爬了"""
+    try:
+        if client.exists(f'{biz}_last_claw_date'.encode()):
+            client.spop(f'{biz}_last_claw_date'.encode())
+        client.sadd(f'{biz}_last_claw_date'.encode(), claw_date)
+    except Exception as e:
+        print('claw date save error:', e)
+
+
+def get_last_claw_date(biz):
+    try:
+        claw_date = client.spop(f'{biz}_last_claw_date'.encode())
+        client.sadd(f'{biz}_last_claw_date'.encode(), str(claw_date))
+    except Exception as e:
+        print('get last claw date error:', e)
+        claw_date = None
+
+    return str(claw_date, encoding='utf-8')
 
 
 if __name__ == '__main__':

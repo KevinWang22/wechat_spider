@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3447459e-7cd0-4bfa-bd21-e2223b1f9555" name="Default Changelist" comment="" />
+    <list default="true" id="3447459e-7cd0-4bfa-bd21-e2223b1f9555" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_operate.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_operate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/article_info_catcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/article_info_catcher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons.py" beforeDir="false" afterPath="$PROJECT_DIR$/commons.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cookies.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cookies.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wechat_doc_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/wechat_doc_spider.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +23,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1iUE0viUnMNdK77ANpFql5zQMcG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -24,6 +36,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../bilibilispider" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -39,7 +52,51 @@
       <recent name="D:\python_work\wechat_spider" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.wechat_doc_spider">
+  <component name="RunManager" selected="Python.app_operate">
+    <configuration name="app_operate" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="wechat_spider" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app_operate.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="commons" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="wechat_spider" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/commons.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="wechat_spider" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -86,8 +143,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.wechat_doc_spider" />
+        <item itemvalue="Python.app_operate" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.wechat_doc_spider" />
+        <item itemvalue="Python.commons" />
       </list>
     </recent_temporary>
   </component>
@@ -120,50 +179,80 @@
       <workItem from="1602817082016" duration="9730000" />
       <workItem from="1602856642216" duration="8756000" />
       <workItem from="1602942378407" duration="1104000" />
-      <workItem from="1602987619522" duration="2673000" />
+      <workItem from="1602987619522" duration="15495000" />
+      <workItem from="1603071052990" duration="11001000" />
+      <workItem from="1603126191131" duration="802000" />
+      <workItem from="1603159030642" duration="19147000" />
+      <workItem from="1603202446198" duration="5266000" />
+      <workItem from="1603211674755" duration="1215000" />
+      <workItem from="1603243442625" duration="20715000" />
+      <workItem from="1603334644793" duration="14153000" />
+      <workItem from="1603372576819" duration="2448000" />
+      <workItem from="1603418274054" duration="8215000" />
+      <workItem from="1603515510997" duration="9764000" />
+      <workItem from="1603613789967" duration="5403000" />
+      <workItem from="1603681221005" duration="3176000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602866421405">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602866421405" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1602597827300">
+    <state x="560" y="113" key="CommitChangelistDialog2" timestamp="1603354191076">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602597827300" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1602868483011">
+    <state x="560" y="113" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1603354191076" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1603697702868">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602868483011" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1602868483011">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1603697702868" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1603707985184">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602868483011" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1602868483011">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603707985184" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1603707985184">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602868483011" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1602868483011">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603707985184" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1603707985184">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602868483011" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1602754414414">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603707985184" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1603707985184">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602754414414" />
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1602987633629">
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603707985184" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1603011001748">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602987633629" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1602833697480">
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603011001748" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1603010183605">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1602833697480" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603010183605" />
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1603785321695">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603785321695" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1603683606263">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1603683606263" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -177,7 +266,9 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/wechat_spider$wechat_doc_spider.coverage" NAME="wechat_doc_spider Coverage Results" MODIFIED="1602867893098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/wechat_spider$test.coverage" NAME="test Coverage Results" MODIFIED="1602646312965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/wechat_spider$wechat_doc_spider.coverage" NAME="wechat_doc_spider Coverage Results" MODIFIED="1603516344881" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/wechat_spider$app_operate.coverage" NAME="app_operate Coverage Results" MODIFIED="1603682412991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/wechat_spider$commons.coverage" NAME="commons Coverage Results" MODIFIED="1603251724855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/wechat_spider$test.coverage" NAME="test Coverage Results" MODIFIED="1603619602799" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
