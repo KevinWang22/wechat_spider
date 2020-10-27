@@ -216,24 +216,6 @@ def get_last_claw_date(biz):
     return str(claw_date, encoding='utf-8')
 
 
-if __name__ == '__main__':
-
-    """deleting_key = '嬉游clawed_page'
-    if del_redis_key(deleting_key):
-        print('删除成功')"""
-
-    """urls = get_article_url('发现旅行')
-
-    if urls == 0 or not urls:
-        print('查询失败')
-    else:
-        for url in urls:
-            print(url[0])"""
-    search_sql = f"select count(*) from biz where aid = '发现旅行'"
-    conn = pymysql.connect('localhost', 'root', 'as9754826', 'wechat_biz')
-    cur = conn.cursor()
-    cur.execute(search_sql)
-    print(cur.fetchone()[0])
 
 
 
