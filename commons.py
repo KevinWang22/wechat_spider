@@ -73,6 +73,7 @@ def save_biz_paper(infos):
                     db.commit()
                 except Exception as e:
                     print('insert infos error', e)
+                    print('sql:', sql)
                     db.rollback()
                     status = 0
             else:

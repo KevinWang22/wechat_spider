@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3447459e-7cd0-4bfa-bd21-e2223b1f9555" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_operate.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_operate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/article_info_catcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/article_info_catcher.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/commons.py" beforeDir="false" afterPath="$PROJECT_DIR$/commons.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cookies.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cookies.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
@@ -192,7 +189,16 @@
       <workItem from="1603515510997" duration="9764000" />
       <workItem from="1603613789967" duration="5403000" />
       <workItem from="1603681221005" duration="3176000" />
+      <workItem from="1603785320675" duration="293000" />
     </task>
+    <task id="LOCAL-00001" summary="更新了爬取规则，实现从上次停止的地方开始继续爬取">
+      <created>1603785580847</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603785580847</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,15 +214,19 @@
       </list>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="更新了爬取规则，实现从上次停止的地方开始继续爬取" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新了爬取规则，实现从上次停止的地方开始继续爬取" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602866421405">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602866421405" />
-    <state x="560" y="113" key="CommitChangelistDialog2" timestamp="1603354191076">
+    <state x="560" y="113" key="CommitChangelistDialog2" timestamp="1603785576667">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="560" y="113" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1603354191076" />
+    <state x="560" y="113" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1603785576667" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1603697702868">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
