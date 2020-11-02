@@ -77,6 +77,8 @@ class WechatSpider:
             # 每页有5次推送，则开始的位置为当前爬取的页面*5
             self.paper_params['begin'] = str(self.clawed_page * 5)
 
+        self.proxy_claw_page = 0
+
         # print(self.paper_params['begin'])
         # 没用上
         """self.wechat_cookie = {
@@ -94,7 +96,7 @@ class WechatSpider:
 
     def login_official_account(self):
         """selenium模拟登录，同时把登录成功后的cookies保存下来"""
-        driver = webdriver.Chrome(executable_path='chromedriver84.4147.exe')
+        driver = webdriver.Chrome(executable_path='chromedriver.exe')
         driver.get(index_url)
         time.sleep(5)
         # print(driver.page_source)
@@ -415,16 +417,16 @@ class WechatSpider:
                     except Exception as e:
                         print(e)
 
-            # 需要爬的次数和开始位置变更
-            clawing_pages -= 1
-            self.paper_params['begin'] = str(int(self.paper_params['begin']) + 5)
+                # 需要爬的次数和开始位置变更
+                clawing_pages -= 1
+                self.paper_params['begin'] = str(int(self.paper_params['begin']) + 5)
+                self.proxy_claw_page += 1
+                # 每成功爬取10页，更新代理ip
+                if self.proxy_claw_page == 10:
+                    self.using_proxy = self.proxy.random_https_proxy()
+                    self.proxy_claw_page = 0
 
             time.sleep(random.randint(5, 15))
         print(self.biz + '文章爬取完毕')
 
-
-if __name__ == '__main__':
-    wechat = WechatSpider('495768433@qq.com', 'as9754826', '嬉游')
-    # print(type(wechat.get_biz('嬉游')))
-    wechat.get_all_paper()
 
