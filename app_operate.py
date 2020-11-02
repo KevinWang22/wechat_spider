@@ -45,6 +45,7 @@ class AppRobot:
                 break"""
         # 用xpath来查找，id+text定位
         xpath = f"//*[@resource-id='com.tencent.mm:id/e3x' and @text='{text}']/../../../.."
+        time.sleep(10)
         try:
             target_chat = self.driver.find_element(By.XPATH, xpath)
         except Exception as e:
@@ -85,19 +86,19 @@ class AppRobot:
         # 用xpath定位返回按钮，返回的view的父元素才能点击
         xpath = "//*[@content-desc='返回']/parent::*"
         try:
-            # 关闭前随机等待5-15秒，确保所有信息都加载完了
-            time.sleep(random.randint(3, 8))
+            # 关闭前随机等待1-3秒，确保所有信息都加载完了
+            time.sleep(random.randint(1, 3))
 
             # 点击定位到的按钮
             self.driver.find_element(By.XPATH, xpath).click()
-            # 点击后随机等待3-8秒，确保模拟器响应完毕
-            time.sleep(random.randint(3, 8))
+            # 点击后随机等待3-5秒，确保模拟器响应完毕
+            time.sleep(random.randint(3, 5))
         except Exception as e:
             print(e)
 
-    def run(self, biz_name, chat_name, is_continue=False):
+    def run(self, biz_name, chat_name, is_continue=False, finish_null=False):
         """爬取的入口"""
-        url_list = get_article_url(biz_name, is_continue)
+        url_list = get_article_url(biz_name, is_continue, finish_null)
         if url_list == 0:
             print('url获取失败，请重试')
         else:
@@ -113,20 +114,11 @@ class AppRobot:
                     self.sent_text(url)
                     self.click_last_info()
                     self.close_window()
-                print(biz + '所有已有url已处理')
+                print(biz_name + '所有已有url已处理')
             else:
                 print('没找到指定的聊天窗，请确认聊天窗名称是否正确')
 
 
-if __name__ == '__main__':
-    """path = os.path.split(os.path.realpath(__file__))[0]
-    command = f'mitmdump -s {path}\\article_info_catcher.py'
-    os.system(command)"""
-    biz = '嬉游'
-    chat_name = '粘膜上皮细胞'
-    # print(biz)
-    robot = AppRobot()
-    robot.run(biz, chat_name, True)
 
 
 

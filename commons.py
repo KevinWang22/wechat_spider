@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import redis
 import pymysql
-import time
 
 
 # 微信公众号首页的地址，没有cookie的时候是登录界面，有cookie的时候从重定向的url中可以拿到token
@@ -121,18 +120,32 @@ def del_redis_ele(infos):
     return client.srem((infos['biz_name'] + 'paper').encode(), infos['app_msg_title'])
 
 
-def get_article_url(biz, is_continue=False):
-
+def get_article_url(biz, is_continue=False, finish_null=False):
+    """
+    从数据库读取需要爬取的url
+    :param biz: 公众号名称
+    :param is_continue:  是否从上次爬取时间开始
+    :param finish_null:  是否爬取还未爬取过的
+    :return results:   url列表，当查询错误时则返回0
+    """
     sql = f'select app_msg_url from biz where biz_name = "{biz}"'
 
     # 需要从上次爬完的地方开始时，就从redis中取出上次的时间，把update_time早于上次的全部爬出来
-    if is_continue:
+    if is_continue and finish_null:
         if client.exists(f'{biz}_last_claw_date'.encode()):
             last_claw_date = get_last_claw_date(biz)
             print('last_claw_date', last_claw_date)
             if last_claw_date:
                 sql += f' and (date_format(update_time, "%Y-%m-%d") < "{str(last_claw_date)}" '
                 sql += 'or update_time is Null)'
+    elif finish_null:
+        sql += 'and update_time is Null'
+    else:
+        if client.exists(f'{biz}_last_claw_date'.encode()):
+            last_claw_date = get_last_claw_date(biz)
+            print('last_claw_date', last_claw_date)
+            if last_claw_date:
+                sql += f' and (date_format(update_time, "%Y-%m-%d") < "{str(last_claw_date)}" '
 
     try:
         db = pymysql.connect('localhost', 'root', 'as9754826', 'wechat_biz')
@@ -170,8 +183,8 @@ def save_num(aid, like_num=0, read_num=0, old_like_num=0):
         cursor.execute(search_sql)
         affect_row = cursor.fetchone()[0]
         if affect_row:
-            update_sql = f"update biz set read_num = {read_num}, like_num = {old_like_num}, looking_num = {like_num} " \
-                         f"where aid = '{aid}'"
+            update_sql = f"""update biz set read_num = '{read_num}', like_num = '{old_like_num}', 
+                        looking_num = '{like_num}' where aid = '{aid}'"""
             try:
                 cursor.execute(update_sql)
                 conn.commit()
@@ -181,8 +194,8 @@ def save_num(aid, like_num=0, read_num=0, old_like_num=0):
                 save_status = 0
 
         else:
-            insert_sql = f"insert into biz (aid, read_num, looking_num, like_num) values ('{aid}', '{read_num}'," \
-                         f" '{like_num}', '{old_like_num}')"
+            insert_sql = f'''insert into biz (aid, read_num, looking_num, like_num) values ('{aid}', '{read_num}',
+                         '{like_num}', '{old_like_num}')'''
             try:
                 cursor.execute(insert_sql)
                 conn.commit()
@@ -214,7 +227,6 @@ def get_last_claw_date(biz):
         claw_date = None
 
     return str(claw_date, encoding='utf-8')
-
 
 
 
