@@ -4,9 +4,7 @@
     <list default="true" id="3447459e-7cd0-4bfa-bd21-e2223b1f9555" name="Default Changelist" comment="更新">
       <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_operate.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_operate.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chromedriver84.4147.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons.py" beforeDir="false" afterPath="$PROJECT_DIR$/commons.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cookies.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cookies.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
@@ -198,7 +196,7 @@
       <workItem from="1603935703337" duration="11446000" />
       <workItem from="1603976590733" duration="1342000" />
       <workItem from="1604021632045" duration="3206000" />
-      <workItem from="1604301036361" duration="3059000" />
+      <workItem from="1604301036361" duration="3308000" />
     </task>
     <task id="LOCAL-00001" summary="更新了爬取规则，实现从上次停止的地方开始继续爬取">
       <created>1603785580847</created>
@@ -221,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604307009806</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="修改爬取列表获取规则">
+      <created>1604307686475</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1604307686475</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,17 +246,18 @@
     <MESSAGE value="更新了爬取规则，实现从上次停止的地方开始继续爬取" />
     <MESSAGE value="优化爬取逻辑，修复了更新不超过一页时不爬取的bug" />
     <MESSAGE value="增加每爬10页就更换一个代理" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加每爬10页就更换一个代理" />
+    <MESSAGE value="修改爬取列表获取规则" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改爬取列表获取规则" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602866421405">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602866421405" />
-    <state x="560" y="113" key="CommitChangelistDialog2" timestamp="1604307209318">
+    <state x="560" y="113" key="CommitChangelistDialog2" timestamp="1604307685468">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="560" y="113" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1604307209318" />
+    <state x="560" y="113" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1604307685468" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1603786884779">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -260,22 +266,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1603948412007" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1604307127980">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1604307945656">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604307127980" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1604307127980">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604307945656" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1604307945656">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604307127980" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1604307127980">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604307945656" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1604307945655">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604307127980" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1604307127980">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604307945655" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1604307945656">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604307127980" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604307945656" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1603812825679">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -304,10 +310,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603011001748" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604307290988">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604307742480">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604307290988" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604307742480" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1603010183605">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
