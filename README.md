@@ -41,10 +41,13 @@
 
 #### 爬取文章基础信息
 
-       1. 打开redis、mysql，配置好mysql的用户和密码
-       2. 配置好你的公众号账号密码
-       3. 修改wechat_doc_spider.py中的公众号名称
-       4. 运行wechat_doc_spider.py
+1. 打开redis、mysql，配置好mysql的用户和密码
+
+2. 配置好你的公众号账号密码
+
+3. 修改wechat_doc_spider.py中的公众号名称
+
+4. 运行wechat_doc_spider.py
 
 #### 爬取文章详细信息
 
